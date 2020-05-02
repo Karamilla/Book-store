@@ -17,7 +17,7 @@ class ListContacts extends Component {
     this.setState({ query: query.trim() });
   };
   render() {
-    const { contacts, onDeleteContact } = this.props;
+    const { contacts, onDeleteContact, onNavigate } = this.props;
     const { query } = this.state;
 
     let showingContacts;
@@ -41,6 +41,10 @@ class ListContacts extends Component {
             value={query}
             onChange={(e) => this.updateQuery(e.target.value)}
           ></input>
+
+          <a href="#create" onClick={onNavigate} className="add-contact">
+            Add Contact
+          </a>
         </div>
 
         <ol className="contact-list">
