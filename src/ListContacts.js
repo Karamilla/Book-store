@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import escapeRegExp from "escape-string-regexp";
 import sortBy from "sort-by";
+import { Link } from "react-router-dom";
 
 // function ListContacts(this.props) {
 //   return (
@@ -42,9 +43,9 @@ class ListContacts extends Component {
             onChange={(e) => this.updateQuery(e.target.value)}
           ></input>
 
-          <a href="#create" onClick={onNavigate} className="add-contact">
+          <Link to="/create" className="add-contact">
             Add Contact
-          </a>
+          </Link>
         </div>
 
         <ol className="contact-list">
